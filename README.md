@@ -2,6 +2,11 @@
 
 > Project description
 
+This project is SoundCloud mock, a front-end capstone project for Hack Reactor. This module
+represents the top component of an individual songs' page, with the waveform, dynamically rendered 
+comments, and song characteristics. 
+
+
 ## Related Projects
 
   - https://github.com/teamName/repo
