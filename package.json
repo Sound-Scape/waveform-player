@@ -8,7 +8,8 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "seed": "node database/seed.js"
   },
   "dependencies": {
     "faker": "^4.1.0",
@@ -23,6 +24,7 @@
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.2",
     "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
