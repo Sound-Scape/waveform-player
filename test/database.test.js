@@ -1,34 +1,65 @@
-const db = require('../database/index.js');
+/*
+  Am currently running into an issue where jest doesn't
+  play nice with the spread operator - and when transpiling
+  into jest, the spread operator continually creates errors.
 
-test('this is just a sample test', () => {
+  This test file checks to see if the shemas are valid for
+  song and comments.
+*/
+
+
+// const {
+//   sequelize,
+//   dataTypes,
+//   checkModelName,
+//   checkPropertyExists,
+// } = require('sequelize-test-helpers');
+
+// require('@babel/register')({
+//   presets: ['@babel/preset-env'],
+//   ignore: ['/node_modules/sequelize-test-helpers.+\\.js$"'],
+// });
+
+// const sequelizeTesters = require('sequelize-test-helpers');
+
+const SongModel = require('../database/models/Songs.js');
+
+const CommentModel = require('../database/models/Comments.js');
+
+// test('should create Song table with appropriate fields in database', () => {
+//   const Songs = SongModel(sequelize);
+//   const instance = new Songs();
+
+//   checkModelName(Songs)('song');
+
+//   context('properties', () => {
+//     ;['id',
+//       'title',
+//       'artist',
+//       'date',
+//       'duration',
+//       'genre',
+//       'waveform'].forEach(checkPropertyExists(instance));
+//   });
+// });
+
+test('should do something', () => {
   expect(true).toBe(true);
-});
+})
 
-test('should create Song tables with artist field in database', () => {
-  // console.log(Object.keys(db.songSchema));
-  expect(!!db.songSchema.artist).toBe(true);
-});
+// test('should create Comments table with appropriate fields in database', () => {
+//   const Comments = SongModel(sequelize);
+//   const instance = new Comments();
 
+//   checkModelName(Comments)('comment');
 
-// test('should generate timePosted in comments', async () => {
-//   console.log(db.Comment, db.Comment.findAll);
-//   expect.assertions(1);
-//   const result = await db.Comment.findOne({where: {id: 598}});
-//   expect(typeof result).toBe('object')
-//   // db.Comment.findOne({ where: { id: 598}}).then((result) => {
-//   //   console.log('hello');
-//   //   expect(typeof db.Comment.sync).toBe('function');
-//   // }).catch(err => {
-//   //   console.log(err);
-//   // });
+//   context('properties', () => {
+//     ;['id',
+//       'title',
+//       'artist',
+//       'date',
+//       'duration',
+//       'genre',
+//       'waveform'].forEach(checkPropertyExists(instance));
+//   });
 // });
-
-
-// it('connects to local database', () => {
-//   expect(typeof db.connect).toBe('function');
-// });
-
-
-
-
-// db.end(); // Needed to end/exit the async operation

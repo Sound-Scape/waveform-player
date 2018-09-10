@@ -8,30 +8,58 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "build": "webpack -d --watch",
+    "start": "nodemon server/index.js",
     "test": "jest",
     "seed": "node database/seed.js"
   },
-  "dependencies": {
-    "faker": "^4.1.0",
-    "mysql": "^2.16.0",
-    "sequelize": "^4.38.0"
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
+    "express": "^4.16.3",
+    "faker": "^4.1.0",
+    "jest-cli": "^23.6.0",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "sequelize": "^4.38.0",
+    "sequelize-test-helpers": "^1.0.4",
+    "sinon": "^6.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-es2017": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "babel-jest": "^23.4.2",
-    "babel-loader": "^8.0.2",
+    "babel-loader": "^8.0.0",
+    "chai": "^4.1.2",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.5.0",
     "mysql2": "^1.6.1",
     "regenerator-runtime": "^0.12.1",
-    "webpack": "^4.17.2"
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   }
 }
