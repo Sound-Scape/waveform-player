@@ -1,8 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const WaveformPlayer = require('./components/WaveformPlayer.jsx');
 
 const App = () => (
-  <div>This here is a react app</div>
+  <WaveformPlayer />
 );
 
-ReactDOM.render(< App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
