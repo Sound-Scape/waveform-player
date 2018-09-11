@@ -27,6 +27,9 @@ const songSchema = {
   waveform: {
     type: Sequelize.STRING,
   },
+  backgroundColor: {
+    type: Sequelize.STRING,
+  },
 };
 
 const model = (sequelize) => {
