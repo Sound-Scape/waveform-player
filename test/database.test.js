@@ -21,6 +21,7 @@
 // });
 
 // const sequelizeTesters = require('sequelize-test-helpers');
+const SequelizeMock = require('sequelize-mock');
 
 const SongModel = require('../database/models/Songs.js');
 
@@ -45,6 +46,10 @@ const CommentModel = require('../database/models/Comments.js');
 
 test('should do something', () => {
   expect(true).toBe(true);
+});
+
+test('should do something else', () => {
+  expect(1 + 1).toBe(2);
 })
 
 // test('should create Comments table with appropriate fields in database', () => {
