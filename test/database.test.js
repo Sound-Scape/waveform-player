@@ -21,6 +21,7 @@
 // });
 
 // const sequelizeTesters = require('sequelize-test-helpers');
+const SequelizeMock = require('sequelize-mock');
 
 const SongModel = require('../database/models/Songs.js');
 

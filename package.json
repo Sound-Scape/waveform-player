@@ -59,6 +59,7 @@
     "jest": "^23.5.0",
     "mysql2": "^1.6.1",
     "regenerator-runtime": "^0.12.1",
+    "sequelize-mock": "^0.10.2",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0"
   }
