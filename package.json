@@ -21,6 +21,7 @@
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
     "express": "^4.16.3",
     "faker": "^4.1.0",
