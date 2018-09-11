@@ -1,4 +1,7 @@
 const React = require('react');
+const Waveform = require('./PlayerContainerComponents/Waveform.jsx');
+const CommentPlaceholder = require('./PlayerContainerComponents/CommentPlaceholder.jsx');
+const CommentPopover = require('./PlayerContainerComponents/CommentPopover.jsx');
 
 class PlayerContainer extends React.Component {
   constructor(props) {
@@ -10,7 +13,9 @@ class PlayerContainer extends React.Component {
   render() {
     return (
       <div className="player-container">
-        <div> PlayerContainer </div>
+        <Waveform />
+        <CommentPlaceholder />
+        <CommentPopover />
       </div>
     );
   }
