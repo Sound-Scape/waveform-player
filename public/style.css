@@ -1,0 +1,118 @@
+.waveform-player-wrapper {
+  position: absolute;
+  border: 1px solid red;
+  height: 380px;
+  width: 1080px;
+  background-image: linear-gradient(135deg, white, grey);
+}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.info-container {
+  position: absolute;
+  text-align: right;
+  top: 26px;
+  left: 550px;
+  height: 63px;
+  width: 150px;
+}
+
+.title-container {
+  position: absolute;
+  border: 2px solid yellow;
+  top: 26px;
+  left: 26px;
+  height: 63px;
+  width: 490px;
+}
+
+.player-container {
+  position: absolute;
+  border: 2px solid black;
+  height: 100px;
+  width: 660px;
+  bottom: 30px;
+  left: 26px
+}
+
+.art-container {
+  position: absolute;
+  border: 2px solid orange;
+  height: 340px;
+  width: 340px;
+  right: 20px;
+  bottom: 20px;
+}
+
+.wp-artist {
+  position: absolute;
+  border: 2px solid blue;
+  width: 82px;
+  height: 24px;
+  left: 64px;
+  top: -8px
+}
+
+.wp-title {
+  position: absolute;
+  border: 2px solid green;
+  position: absolute;
+  height: 34;
+  width: 122;
+  left: 64px;
+  bottom: 0px;
+}
+
+.wp-playbutton {
+  position: absolute;
+  border: 2px solid #e1b926;
+  height: 60px;
+  width: 60px;
+}
+
+.wp-date {
+  position: absolute;
+  border: 2px solid blue;  
+  height: 22px;
+  width: 150px;
+  right: 0px;
+}
+
+.wp-genre-hash {
+  position: absolute;
+  border: 2px solid grey;
+  height: 22px;
+  width: 99px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.wp-waveform {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.wp-comment-placeholder {
+  position: absolute;
+}
+
+.wp-comment-popover {
+  position: absolute;
+  border: 2px solid red;
+  width: 657px;
+  height: 20px;
+  bottom: 6px;
+}
+
+hr {
+  position: absolute;
+  width: 657px;
+  top: 60px;
+}
