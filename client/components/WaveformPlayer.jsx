@@ -28,9 +28,11 @@ class WaveformPlayer extends React.Component {
 
   render() {
     const { song, comments, isPlaying } = this.state;
-
+    const style = {
+      backgroundImage: `linear-gradient(135deg,${song.backgroundColor},grey)`,
+    };
     return (
-      <div className="waveform-player-wrapper">
+      <div className="waveform-player-wrapper" style={style}>
         <InfoContainer song={song} />
         <TitleContainer song={song} isPlaying={isPlaying} />
         <PlayerContainer comments={comments} isPlaying={isPlaying} />
