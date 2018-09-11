@@ -50,21 +50,35 @@
 
 .wp-artist {
   position: absolute;
-  border: 2px solid blue;
-  width: 82px;
-  height: 24px;
+  /* border: 2px solid blue;*/
+  /* width: 82px;*/
+  height: 19px;
   left: 64px;
-  top: -8px
+  top: -7px;
+  background-color: rgba(0,0,0,.8);
+  font-weight: 100;
+  color: #ccc;
+  font-family: "Lucida Grande";
+  font-size: 16px;
+  font-weight: 100;
+  padding: 2px 7px 3px 7px;
 }
 
 .wp-title {
   position: absolute;
-  border: 2px solid green;
+  /*border: 2px solid green;*/
+  /* width: 122;*/
   position: absolute;
   height: 34;
-  width: 122;
   left: 64px;
   bottom: 0px;
+  background-color: rgba(0,0,0,.8);
+  line-height: 37px;
+  font-size: 24px;
+  font-weight: 100;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  color: #fff;
+  padding: 4px 7px 4px 7px;
 }
 
 .wp-playbutton {

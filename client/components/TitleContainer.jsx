@@ -9,12 +9,16 @@ const Title = require('./titleContainerComponents/Title.jsx');
   The same goes for artist.
 */
 
-const TitleContainer = () => (
-  <div className="title-container">
-    <Playbutton />
-    <Title />
-    <Artist />
-  </div>
-);
+const TitleContainer = (props) => {
+  const { title, artist } = props.song;
+
+  return (
+    <div className="title-container">
+      <Playbutton />
+      <Title title={title} />
+      <Artist artist={artist} />
+   </div>
+  );
+};
 
 module.exports = TitleContainer;
