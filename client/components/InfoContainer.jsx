@@ -8,11 +8,14 @@ const Date = require('./infoContainerComponents/Date.jsx');
   for songs with/without genres.
 */
 
-const InfoContainer = () => (
-  <div className="info-container">
-    <GenreHash />
-    <Date />
-  </div>
-);
+const InfoContainer = (props) => {
+  const { date, genre } = props.song;
+  return (
+    <div className="info-container">
+      <GenreHash genre={genre} />
+      <Date date={date} />
+    </div>
+  );
+};
 
 module.exports = InfoContainer;

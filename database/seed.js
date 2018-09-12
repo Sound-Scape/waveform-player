@@ -37,8 +37,9 @@ function instantiateData(songModel, commentModel) {
           coverArt: imageUrl,
           date: faker.date.recent(),
           duration: Math.floor(Math.random() * 6 * 100) / 100,
-          genre: faker.lorem.word(),
+          genre: faker.random.word(),
           waveform: waveformUrls[Math.floor(Math.random() * 2)],
+          backgroundColor: faker.internet.color(),
         });
       }
     })

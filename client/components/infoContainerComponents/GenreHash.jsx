@@ -1,8 +1,8 @@
 const React = require('react');
 
-const GenreHash = () => (
+const GenreHash = (props) => (
   <div className="wp-genre-hash">
-    <div>#Genre Hash</div>
+    <div>{`# ${props.genre}`}</div>
   </div>
 );
 

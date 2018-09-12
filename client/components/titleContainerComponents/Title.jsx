@@ -1,8 +1,8 @@
 const React = require('react');
 
-const Title = () => (
+const Title = (props) => (
   <div className="wp-title">
-    <div>Title</div>
+    <div>{props.title}</div>
   </div>
 );
 

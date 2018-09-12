@@ -1,8 +1,8 @@
 const React = require('react');
 
-const Artist = () => (
+const Artist = (props) => (
   <div className="wp-artist">
-    <div> Artist </div>
+    <div> {props.artist} </div>
   </div>
 );
 

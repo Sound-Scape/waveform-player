@@ -19,13 +19,13 @@ const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
 const getSongData = function (id, callback) {
   const songModel = SongModel(sequelize);
   const commentModel = CommentModel(sequelize);
-  const queryResult = [];
+  const queryResult = {};
 
   songModel.findAll({
     where: { id },
   })
     .then((result => {
-      queryResult.push(result);
+      queryResult.songData = result[0];
       return commentModel.findAll({
         where: {
           songId: id,
@@ -33,9 +33,8 @@ const getSongData = function (id, callback) {
       })
     }))
     .then((result => {
-      queryResult.push(result);
-      console.log({ data: queryResult });
-      callback(JSON.stringify({ data: queryResult }));
+      queryResult.commentData = result;
+      callback(JSON.stringify({ allData: queryResult }));
     }))
 };
 

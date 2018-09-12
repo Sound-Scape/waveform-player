@@ -10,7 +10,7 @@
   "scripts": {
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "test": "jest",
+    "test": "jest --coverage",
     "seed": "node database/seed.js"
   },
   "jest": {
@@ -21,10 +21,12 @@
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "jest-cli": "^23.6.0",
+    "moment": "^2.22.2",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
