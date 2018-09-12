@@ -25,7 +25,7 @@ const getSongData = function (id, callback) {
     where: { id },
   })
     .then((result => {
-      queryResult.songData = result;
+      queryResult.songData = result[0];
       return commentModel.findAll({
         where: {
           songId: id,

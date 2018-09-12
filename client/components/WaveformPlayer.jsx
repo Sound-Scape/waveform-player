@@ -20,22 +20,23 @@ class WaveformPlayer extends React.Component {
     axios.get(`http://localhost:3003/song/${songId}`)
       .then(({ data }) => {
         this.setState({
-          song: data.allData.songData[0],
+          song: data.allData.songData,
           comments: data.allData.commentData,
         });
       });
   }
 
   render() {
+    console.log(this.state);
     const { song, comments, isPlaying } = this.state;
     const style = {
-      backgroundImage: `linear-gradient(135deg,${song.backgroundColor},grey)`,
+      backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,
     };
     return (
       <div className="waveform-player-wrapper" style={style}>
         <InfoContainer song={song} />
         <TitleContainer song={song} isPlaying={isPlaying} />
-        <PlayerContainer comments={comments} isPlaying={isPlaying} />
+        <PlayerContainer comments={comments} isPlaying={isPlaying} song={song} />
         <ArtContainer song={song} />
       </div>
     );
