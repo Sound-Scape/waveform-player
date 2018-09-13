@@ -1,20 +1,17 @@
 const React = require('react');
+const CommentAvatar = require('./CommentAvatar.jsx');
 
-class CommentPlaceholder extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      // comments: this.props.comments --> to be implemented
-    }
-  }
-
-  render() {
-    return (
+const CommentPlaceholder = (props) => {
+  const { comments } = props;
+  console.log(comments);
+  return (
+    <div>
       <div className="wp-comment-placeholder">
-        <hr className="wp-comment-line" />
+      <hr/>
+        {comments.map(comment => <CommentAvatar comment={comment} />)}
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
 module.exports = CommentPlaceholder;

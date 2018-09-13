@@ -7,7 +7,6 @@ const Waveform = (props) => {
     backgroundSize: '100% 100%',
     backgroundColor: 'transparent',
   };
-  console.log('made it here');
   return (
     <div className="wp-waveform" style={style} />
   );
