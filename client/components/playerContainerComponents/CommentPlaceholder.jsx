@@ -1,5 +1,5 @@
 const React = require('react');
-const CommentAvatar = require('./CommentAvatar.jsx');
+const Comment = require('./CommentAvatar.jsx');
 
 const CommentPlaceholder = (props) => {
   const { comments } = props;
@@ -8,7 +8,7 @@ const CommentPlaceholder = (props) => {
     <div>
       <div className="wp-comment-placeholder">
       <hr/>
-        {comments.map(comment => <CommentAvatar comment={comment} />)}
+        {comments.map(comment => <Comment comment={comment} />)}
       </div>
     </div>
   );
