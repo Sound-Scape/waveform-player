@@ -27,44 +27,10 @@ const SongModel = require('../database/models/Songs.js');
 
 const CommentModel = require('../database/models/Comments.js');
 
-// test('should create Song table with appropriate fields in database', () => {
-//   const Songs = SongModel(sequelize);
-//   const instance = new Songs();
-
-//   checkModelName(Songs)('song');
-
-//   context('properties', () => {
-//     ;['id',
-//       'title',
-//       'artist',
-//       'date',
-//       'duration',
-//       'genre',
-//       'waveform'].forEach(checkPropertyExists(instance));
-//   });
-// });
-
 test('should do something', () => {
   expect(true).toBe(true);
 });
 
 test('should do something else', () => {
   expect(1 + 1).toBe(2);
-})
-
-// test('should create Comments table with appropriate fields in database', () => {
-//   const Comments = SongModel(sequelize);
-//   const instance = new Comments();
-
-//   checkModelName(Comments)('comment');
-
-//   context('properties', () => {
-//     ;['id',
-//       'title',
-//       'artist',
-//       'date',
-//       'duration',
-//       'genre',
-//       'waveform'].forEach(checkPropertyExists(instance));
-//   });
-// });
+});
