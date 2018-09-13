@@ -43,8 +43,8 @@ class Comment extends React.Component {
       backgroundImage: `url(${userImage})`,
       backgroundSize: '100% 100%',
       borderRadius: this.state.radius,
-      width: '22px',
-      height: '22px',
+      width: '19px',
+      height: '19px',
       zIndex: 1,
     };
     const commentStyle = {
