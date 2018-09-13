@@ -19,7 +19,7 @@ describe(' <InfoContainer /> ', () => {
     expect(wrapper.find(Modules.Date).props().date).toBe(song.date);
     expect(wrapper.find(Modules.GenreHash).props().genre).toBe(song.genre);
   });
-  test('date should display in proper "fromNow" format', () => {
+  test('should display date in proper "fromNow" format', () => {
     const wrapper = shallow(<Modules.Date date={song.date} />);
     const formattedDate = Moment(song.date).fromNow();
     expect(wrapper.text()).toBe(formattedDate);

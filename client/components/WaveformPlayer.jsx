@@ -27,7 +27,6 @@ class WaveformPlayer extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { song, comments, isPlaying } = this.state;
     const style = {
       backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,

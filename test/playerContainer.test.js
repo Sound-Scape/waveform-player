@@ -9,8 +9,9 @@ const { shallow } = Enzyme;
 Enzyme.configure({ adapter: new Adapter() });
 
 describe(' <PlayerContainer /> ', () => {
-  test('some test', () => {
-    expect(true).toBe(true);
+  test('should pass to Waveform an image', () => {
+    const wrapper = shallow(<Modules.PlayerContainer song={song} />);
+    const { waveform } = (wrapper.find(Modules.Waveform).props());
+    expect(waveform.slice(-4)).toBe('.png');
   });
 });
-

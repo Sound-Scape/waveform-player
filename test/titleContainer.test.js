@@ -8,8 +8,9 @@ const Modules = require('../client/components');
 const { shallow } = Enzyme;
 Enzyme.configure({ adapter: new Adapter() });
 
-describe(' <PlayerContainer /> ', () => {
-  test('some test', () => {
-    expect(true).toBe(true);
+describe(' <TitleContainer /> ', () => {
+  test('should render the playbutton,title, artist components', () => {
+    const wrapper = shallow(<Modules.TitleContainer song={song} />);
+    expect(wrapper.find('div.title-container').children()).toHaveLength(3);
   });
 });
