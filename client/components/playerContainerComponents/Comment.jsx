@@ -31,6 +31,11 @@ class Comment extends React.Component {
       user,
     } = this.props.comment;
 
+    /*
+      Refactoring all of my css into styled components is a stretch goal
+      for this weekend.
+    */
+
     const wrapperStyle = {
       position: 'absolute',
       left: timePosted,
@@ -52,9 +57,7 @@ class Comment extends React.Component {
     return (
       <div className="wp-comment-wrapper" style={wrapperStyle}>
          {this.state.visible && <div className="wp-comment-streak" />}
-
         <div className="wp-comment-avatar" style={avatarStyle} onMouseEnter={this.showComment.bind(this)} onMouseLeave={this.hideComment.bind(this)}/>
-       
         {this.state.visible &&
           (
             <div className="wp-comment">
