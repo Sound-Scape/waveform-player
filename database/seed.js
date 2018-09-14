@@ -50,7 +50,7 @@ function instantiateData(songModel, commentModel) {
           text: faker.random.words(),
           user: faker.name.firstName(),
           userImage: faker.image.avatar(),
-          timePosted: Math.floor(Math.random() * 6 * 100) / 100,
+          timePosted: Math.floor(Math.random() * 600 * 100) / 100,
           songId: Math.floor(Math.random() * 100),
         });
       }

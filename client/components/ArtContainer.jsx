@@ -6,9 +6,7 @@ const ArtContainer = (props) => {
     backgroundSize: '100% 100%',
   };
   return (
-    <div className="fixed-container">
       <div className="art-container" style={style} />
-    </div>
   );
 };
 

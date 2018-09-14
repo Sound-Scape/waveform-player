@@ -13,6 +13,14 @@ class WaveformPlayer extends React.Component {
       comments: [],
       isPlaying: false,
     };
+
+    this.playPause = this.playPause.bind(this);
+  }
+
+  playPause() {
+    this.setState({
+      isPlaying: !this.state.isPlaying,
+    });
   }
 
   componentDidMount() {
@@ -32,10 +40,10 @@ class WaveformPlayer extends React.Component {
       backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,
     };
     return (
-      <div className="waveform-player-wrapper" style={style}>
+      <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
         <InfoContainer song={song} />
-        <TitleContainer song={song} isPlaying={isPlaying} />
-        <PlayerContainer comments={comments} isPlaying={isPlaying} song={song} />
+        <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause}  />
+        <PlayerContainer comments={comments} isPlaying={isPlaying} song={song}/>
         <ArtContainer song={song} />
       </div>
     );
