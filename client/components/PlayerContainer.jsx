@@ -16,7 +16,7 @@ class PlayerContainer extends React.Component {
       <div className="player-container">
         <Waveform waveform={waveform} />
         <div className="wp-comment-placeholder">
-          {comments.map(comment => <Comment comment={comment} />)}
+          {comments.map((comment, key) => <Comment comment={comment} key={key} />)}
         </div>
       </div>
     );
