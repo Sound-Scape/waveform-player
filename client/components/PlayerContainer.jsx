@@ -1,7 +1,6 @@
 const React = require('react');
 const Waveform = require('./playerContainerComponents/Waveform.jsx');
-const CommentPlaceholder = require('./playerContainerComponents/CommentPlaceholder.jsx');
-const CommentPopover = require('./playerContainerComponents/CommentPopover.jsx');
+const Comment = require('./playerContainerComponents/Comment.jsx');
 
 class PlayerContainer extends React.Component {
   constructor(props) {
@@ -12,12 +11,13 @@ class PlayerContainer extends React.Component {
 
   render() {
     const { waveform } = this.props.song;
-
+    const comments = this.props.comments;
     return (
       <div className="player-container">
-        <Waveform waveform={waveform}/>
-        <CommentPlaceholder />
-        <CommentPopover />
+        <Waveform waveform={waveform} />
+        <div className="wp-comment-placeholder">
+          {comments.map(comment => <Comment comment={comment} />)}
+        </div>
       </div>
     );
   }

@@ -6,8 +6,7 @@ const TitleContainer = require('./TitleContainer.jsx');
 const Date = require('./infoContainerComponents/Date.jsx');
 const GenreHash = require('./infoContainerComponents/GenreHash.jsx');
 const Waveform = require('./playerContainerComponents/Waveform.jsx');
-const CommentPlaceholder = require('./playerContainerComponents/CommentPlaceholder.jsx');
-const CommentPopover = require('./playerContainerComponents/CommentPopover.jsx');
+const Comment = require('./playerContainerComponents/Comment.jsx');
 const Artist = require('./titleContainerComponents/Artist.jsx');
 const Playbutton = require('./titleContainerComponents/Playbutton.jsx');
 const Title = require('./titleContainerComponents/Title.jsx');
@@ -21,8 +20,7 @@ module.exports = {
   Date,
   GenreHash,
   Waveform,
-  CommentPlaceholder,
-  CommentPopover,
+  Comment,
   Artist,
   Playbutton,
   Title,
