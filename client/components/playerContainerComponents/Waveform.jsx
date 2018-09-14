@@ -6,8 +6,8 @@ const Waveform = (props) => {
     backgroundImage: `url(${props.waveform})`,
     backgroundSize: '100% 100%',
     backgroundColor: 'transparent',
+    zIndex: 0,
   };
-  console.log('made it here');
   return (
     <div className="wp-waveform" style={style} />
   );
