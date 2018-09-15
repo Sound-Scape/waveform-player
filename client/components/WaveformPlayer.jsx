@@ -23,8 +23,11 @@ class WaveformPlayer extends React.Component {
 
 
   componentDidMount() {
-    const songId = Math.floor(Math.random() * 100) + 1;
-    axios.get(`http://localhost:3003/song/${songId}`)
+    let songId = window.location.pathname.split('/')[2];
+    if (parseInt(songId) > 100 || songId === undefined) {
+      songId = 1;
+    }
+    axios.get(`http://localhost:3003/api/${songId}`)
       .then(({ data }) => {
         this.setState({
           song: data.allData.songData,

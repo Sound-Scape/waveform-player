@@ -222,3 +222,53 @@
   font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   margin-left: 10px;
 }
+
+.wp-modal-tint {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(242,242,242,.9);;
+  z-index: 6;
+}
+
+.wp-greyout {
+  height: 100%;
+  width: 100%;
+  filter: grayscale(85%);
+}
+
+.wp-modal {
+  width: 550px;
+  height: 605px;
+  background-color: white;
+  text-align: center;
+  z-index: 7;
+}
+
+.wp-modal-header {
+  position: relative;
+  top: 23px;
+  left: 23px;
+  text-align: left;
+  width: 500px;
+  font-size: 22px;
+  line-height: 1;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 400;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 9px;;
+}
+
+.img-modal {
+  position: relative;
+  top: 46px;
+}
+
+hr .modal {
+  width: 500px;
+}
