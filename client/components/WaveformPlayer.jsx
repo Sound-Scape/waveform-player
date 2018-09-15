@@ -4,6 +4,7 @@ const InfoContainer = require('./InfoContainer.jsx');
 const TitleContainer = require('./TitleContainer.jsx');
 const PlayerContainer = require('./PlayerContainer.jsx');
 const ArtContainer = require('./ArtContainer.jsx');
+const Modal = require('./Modal.jsx');
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
@@ -17,11 +18,6 @@ class WaveformPlayer extends React.Component {
     this.playPause = this.playPause.bind(this);
   }
 
-  playPause() {
-    this.setState({
-      isPlaying: !this.state.isPlaying,
-    });
-  }
 
   componentDidMount() {
     const songId = Math.floor(Math.random() * 100) + 1;
@@ -34,17 +30,26 @@ class WaveformPlayer extends React.Component {
       });
   }
 
+  playPause() {
+    this.setState({
+      isPlaying: !this.state.isPlaying,
+    });
+  }
+
   render() {
     const { song, comments, isPlaying } = this.state;
     const style = {
       backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,
     };
     return (
-      <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
-        <InfoContainer song={song} />
-        <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause}  />
-        <PlayerContainer comments={comments} isPlaying={isPlaying} song={song}/>
-        <ArtContainer song={song} />
+      <div className='wp-greyout'>
+        <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
+          <InfoContainer song={song} />
+          <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause}  />
+          <PlayerContainer comments={comments} isPlaying={isPlaying} song={song}/>
+          <ArtContainer song={song} />
+          <Modal song={song} />
+        </div>
       </div>
     );
   }
