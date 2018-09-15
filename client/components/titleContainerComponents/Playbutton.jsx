@@ -4,7 +4,7 @@ const Playbutton = (props) => {
   const { isPlaying, playPause } = props;
   return (
     <div className="button-container">
-      <div className="wp-playbutton cursor">
+      <div className="wp-playbutton cursor"  onClick={playPause}>
         {!isPlaying && <div className="wp-play" />}
         {isPlaying &&
           (

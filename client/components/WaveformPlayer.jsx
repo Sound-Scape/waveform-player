@@ -13,9 +13,12 @@ class WaveformPlayer extends React.Component {
       song: [],
       comments: [],
       isPlaying: false,
+      showModal: false,
+
     };
 
     this.playPause = this.playPause.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
 
@@ -30,25 +33,43 @@ class WaveformPlayer extends React.Component {
       });
   }
 
-  playPause() {
-    this.setState({
-      isPlaying: !this.state.isPlaying,
-    });
+  toggleModal(e) {
+    // console.log(e.stopImmediatePropagation);
+    // console.log(e.nativeEvent.stopImmediatePropagation);
+    // console.log(e);
+    console.log(e.currentTarget, e.target);
+    // e.nativeEvent.stopImmediatePropagation();
+    if (e.currentTarget === e.target) {
+      this.setState({
+        showModal: !this.state.showModal,
+      });  
+    }
+  }
+
+  //THIS ONE IS GOING IN THE BOOKS. 
+
+  playPause(e) {
+    console.log(e.currentTarget, e.target)
+    if (e.currentTarget === e.target) {
+      this.setState({
+        isPlaying: !this.state.isPlaying,
+      });    
+    }
   }
 
   render() {
-    const { song, comments, isPlaying } = this.state;
+    const { song, comments, isPlaying, showModal } = this.state;
     const style = {
       backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,
     };
     return (
-      <div className='wp-greyout'>
+      <div className={showModal ? 'wp-greyout' : null}>
         <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
           <InfoContainer song={song} />
-          <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause}  />
-          <PlayerContainer comments={comments} isPlaying={isPlaying} song={song}/>
-          <ArtContainer song={song} />
-          <Modal song={song} />
+          <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause} />
+          <PlayerContainer comments={comments} isPlaying={isPlaying} song={song} />
+          <ArtContainer song={song} toggleModal={this.toggleModal} />
+          {showModal && <Modal song={song} toggleModal={this.toggleModal} />}
         </div>
       </div>
     );
