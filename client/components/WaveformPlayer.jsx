@@ -4,6 +4,7 @@ const InfoContainer = require('./InfoContainer.jsx');
 const TitleContainer = require('./TitleContainer.jsx');
 const PlayerContainer = require('./PlayerContainer.jsx');
 const ArtContainer = require('./ArtContainer.jsx');
+const Modal = require('./Modal.jsx');
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
@@ -12,16 +13,14 @@ class WaveformPlayer extends React.Component {
       song: [],
       comments: [],
       isPlaying: false,
+      showModal: false,
+
     };
 
     this.playPause = this.playPause.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
-  playPause() {
-    this.setState({
-      isPlaying: !this.state.isPlaying,
-    });
-  }
 
   componentDidMount() {
     const songId = Math.floor(Math.random() * 100) + 1;
@@ -34,17 +33,43 @@ class WaveformPlayer extends React.Component {
       });
   }
 
+  toggleModal(e) {
+    if (e.currentTarget === e.target) {
+      this.setState({
+        showModal: !this.state.showModal,
+      });
+    }
+  }
+
+  playPause(e) {
+    if (e.currentTarget === e.target) {
+      this.setState({
+        isPlaying: !this.state.isPlaying,
+      });
+    }
+  }
+
   render() {
-    const { song, comments, isPlaying } = this.state;
+    const {
+      song,
+      comments,
+      isPlaying,
+      showModal,
+    } = this.state;
+
     const style = {
       backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,
     };
+    
     return (
-      <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
-        <InfoContainer song={song} />
-        <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause}  />
-        <PlayerContainer comments={comments} isPlaying={isPlaying} song={song}/>
-        <ArtContainer song={song} />
+      <div className={showModal ? 'wp-greyout' : null}>
+        <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
+          <InfoContainer song={song} />
+          <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause} />
+          <PlayerContainer comments={comments} isPlaying={isPlaying} song={song} />
+          <ArtContainer song={song} toggleModal={this.toggleModal} />
+          {showModal && <Modal song={song} toggleModal={this.toggleModal} />}
+        </div>
       </div>
     );
   }
