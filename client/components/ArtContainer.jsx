@@ -7,7 +7,7 @@ const ArtContainer = (props) => {
     backgroundSize: '100% 100%',
   };
   return (
-      <div className="art-container" style={style} onClick={toggleModal}/>
+      <div className="art-container cursor" style={style} onClick={toggleModal}/>
   );
 };
 
