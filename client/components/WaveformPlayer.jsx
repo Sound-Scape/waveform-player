@@ -34,34 +34,33 @@ class WaveformPlayer extends React.Component {
   }
 
   toggleModal(e) {
-    // console.log(e.stopImmediatePropagation);
-    // console.log(e.nativeEvent.stopImmediatePropagation);
-    // console.log(e);
-    console.log(e.currentTarget, e.target);
-    // e.nativeEvent.stopImmediatePropagation();
     if (e.currentTarget === e.target) {
       this.setState({
         showModal: !this.state.showModal,
-      });  
+      });
     }
   }
 
-  //THIS ONE IS GOING IN THE BOOKS. 
-
   playPause(e) {
-    console.log(e.currentTarget, e.target)
     if (e.currentTarget === e.target) {
       this.setState({
         isPlaying: !this.state.isPlaying,
-      });    
+      });
     }
   }
 
   render() {
-    const { song, comments, isPlaying, showModal } = this.state;
+    const {
+      song,
+      comments,
+      isPlaying,
+      showModal,
+    } = this.state;
+
     const style = {
       backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,
     };
+    
     return (
       <div className={showModal ? 'wp-greyout' : null}>
         <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
