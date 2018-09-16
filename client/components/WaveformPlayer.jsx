@@ -63,7 +63,7 @@ class WaveformPlayer extends React.Component {
     const style = {
       backgroundImage: `linear-gradient(135deg,grey,${song.backgroundColor})`,
     };
-    
+
     return (
       <div className={showModal ? 'wp-greyout' : null}>
         <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
