@@ -46,20 +46,3 @@ module.exports = {
     path: path.resolve(__dirname, 'public/dist'),
   },
 };
-
-// module: {
-//     rules: [
-//       {
-//         test: /\.jsx$/,
-//         exclude: /node_modules/,
-//         loader: "babel-loader",
-//         query: {
-//           presets: ['@babel/preset-env', '@babel/preset-react'],
-//         },
-//       },
-//       {
-//         test: /\.css$/,
-//         loader: 'style-loader!css-loader?modules=true&localIdentName=[path][name]__[local]--[hash:base64:5]',
-//       },
-//     ],
-//   },
