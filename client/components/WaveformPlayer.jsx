@@ -84,4 +84,4 @@ class WaveformPlayer extends React.Component {
   }
 }
 
-export default WaveformPlayer;
+module.exports = WaveformPlayer;

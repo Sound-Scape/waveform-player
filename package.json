@@ -10,12 +10,16 @@
   "scripts": {
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "test": "jest --coverage",
+    "test": "jest --verbose",
     "seed": "node database/seed.js"
   },
   "jest": {
     "transform": {
-      "^.+\\.jsx?$": "babel-jest"
+      "^.+\\.jsx?$": "babel-jest",
+      ".*": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
     }
   },
   "dependencies": {
@@ -62,7 +66,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
+    "jest-css-modules": "^1.1.0",
     "mini-css-extract-plugin": "^0.4.2",
     "mysql2": "^1.6.1",
     "regenerator-runtime": "^0.12.1",
