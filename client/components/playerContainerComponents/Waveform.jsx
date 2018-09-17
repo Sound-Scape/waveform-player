@@ -1,4 +1,5 @@
 const React = require('react');
+const styles = require('../../styles/playerContainer.css');
 
 const Waveform = (props) => {
   const style = {
@@ -10,7 +11,7 @@ const Waveform = (props) => {
   };
   return (
     <div>
-    <div className="wp-waveform" style={style} />
+    <div className={styles["wp-waveform"]} style={style} />
     <div />
     </div>
   );
