@@ -4,13 +4,10 @@ const db = require('../database/index.js');
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, 'public')));
 app.use('/', express.static('public'));
-app.get('/', (req, res) => {
-  res.send('This is the server response');
-});
+app.use('/song/:id', express.static('public'));
 
-app.get('/song/:id', (req, res) => {
+app.get('/api/:id', (req, res) => {
   db.getSongData(req.params.id, res.send.bind(res));
 });
 

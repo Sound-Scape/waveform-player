@@ -10,6 +10,7 @@ const Comment = require('./playerContainerComponents/Comment.jsx');
 const Artist = require('./titleContainerComponents/Artist.jsx');
 const Playbutton = require('./titleContainerComponents/Playbutton.jsx');
 const Title = require('./titleContainerComponents/Title.jsx');
+const Modal = require('./Modal.jsx');
 
 module.exports = {
   WaveformPlayer,
@@ -24,4 +25,5 @@ module.exports = {
   Artist,
   Playbutton,
   Title,
+  Modal,
 };
