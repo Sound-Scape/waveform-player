@@ -1,0 +1,39 @@
+.info-container {
+  position: absolute;
+  text-align: right;
+  top: 26px;
+  left: 550px;
+  height: 63px;
+  width: 150px;
+}
+
+.wp-date {
+  position: absolute;
+  height: 22px;
+  right: 0px;
+  font-size: 16px;
+  font-weight: 100px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  color: #fff;
+}
+
+.wp-genre-hash {
+  position: absolute;
+  vertical-align: middle;
+  height: 22px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 13px;
+  text-align: center;
+  color: #fff;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 16px;
+  font-weight: 100px;
+  background: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: normal;
+  padding-left: 7px;
+  padding-right: 7px;
+}
