@@ -1,4 +1,5 @@
 const React = require('react');
+const styles = require('../styles/artContainer.css');
 
 const ArtContainer = (props) => {
   const { toggleModal } = props;
@@ -7,7 +8,7 @@ const ArtContainer = (props) => {
     backgroundSize: '100% 100%',
   };
   return (
-      <div className="art-container cursor" style={style} onClick={toggleModal}/>
+      <div className={`${styles['art-container']} cursor`} style={style} onClick={toggleModal}/>
   );
 };
 

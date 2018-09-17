@@ -1,6 +1,7 @@
 const React = require('react');
 const Waveform = require('./playerContainerComponents/Waveform.jsx');
 const Comment = require('./playerContainerComponents/Comment.jsx');
+const styles = require('../styles/playerContainer.css');
 
 class PlayerContainer extends React.Component {
   constructor(props) {
@@ -13,9 +14,9 @@ class PlayerContainer extends React.Component {
     const { waveform } = this.props.song;
     const comments = this.props.comments;
     return (
-      <div className="player-container">
+      <div className={styles["player-container"]}>
         <Waveform waveform={waveform} />
-        <div className="wp-comment-placeholder">
+        <div className={styles["wp-comment-placeholder"]}>
           {comments.map((comment, key) => <Comment comment={comment} key={key} />)}
         </div>
       </div>
