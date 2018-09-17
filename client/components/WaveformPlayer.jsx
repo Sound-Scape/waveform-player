@@ -23,7 +23,7 @@ class WaveformPlayer extends React.Component {
 
 
   componentDidMount() {
-    let songId = window.location.pathname.split('/')[2];
+    let songId = this.props.id || window.location.pathname.split('/')[2];
     if (parseInt(songId) > 100 || songId === undefined) {
       songId = 1;
     }

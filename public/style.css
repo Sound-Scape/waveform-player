@@ -202,12 +202,29 @@
   width: 1px;
   display: block;
   background-image: linear-gradient(rgba(255,85,0,.95),rgba(255,85,0,.1));
+  animation-name: streak-reveal;
+  animation-duration: 0.25s;
+
+  /*This one too, should have an opacity setting...*/
 }
 
 .wp-comment {
   position: absolute;
-  bottom: -5px;
+  bottom: -5px; 
+  /*This is the one I want to engage with...*/
   left: 9px;
+  animation-name: comment-drop;
+  animation-duration: 0.1s;
+}
+
+@keyframes streak-reveal {
+  0% {opacity: 0.1};
+ 100% {opacity: 1};
+}
+
+@keyframes comment-drop {
+  0% {bottom: 2px; opacity: 0};
+  100% {bottom: -5px; opacity: 1};
 }
 
 .wp-comment-user {
@@ -231,23 +248,41 @@
   right: 0;
   display: grid;
   justify-content: center;
-  align-items: center;
-  background-color: rgba(242,242,242,.9);;
+  /*background-color: rgba(242,242,242,0);*/
   z-index: 6;
+  animation-name: tint-onset;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
+
+@keyframes tint-onset {
+  from {background-color: rgba(242,242,242,0)}
+  to {background-color: rgba(242,242,242,0.8)};
+}
+
 
 .wp-greyout {
   height: 100%;
   width: 100%;
-  filter: grayscale(85%);
+  filter: grayscale(90%);
 }
 
 .wp-modal {
+  position: relative;
   width: 550px;
   height: 605px;
   background-color: white;
   text-align: center;
   z-index: 7;
+  animation-name: modal-drop;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes modal-drop {
+  0% {top: -400px}
+  100% {top: 150px;};
 }
 
 .wp-modal-header {

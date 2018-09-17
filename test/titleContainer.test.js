@@ -26,5 +26,14 @@ describe(' <TitleContainer /> ', () => {
     expect(wrapper2.containsMatchingElement(<div className="wp-pause2"/>)).toBe(true);
   });
 
+  test('should pass correct artist name in props', () => {
+    const wrapper = shallow(<Modules.TitleContainer song={song} />);
+    expect(wrapper.find(Modules.Artist).props().artist).toBe(song.artist);
+  });
 
+  test('should render with proper artist name as text', () => {
+    const wrapper = shallow(<Modules.Artist artist={song.artist} />);
+    console.log(wrapper.text())
+    expect(wrapper.text().trim()).toBe(song.artist.trim());
+  });
 });
