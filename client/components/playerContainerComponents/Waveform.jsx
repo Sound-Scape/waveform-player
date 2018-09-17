@@ -9,7 +9,10 @@ const Waveform = (props) => {
     zIndex: 0,
   };
   return (
+    <div>
     <div className="wp-waveform" style={style} />
+    <div />
+    </div>
   );
 };
 

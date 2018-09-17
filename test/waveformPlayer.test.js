@@ -42,5 +42,5 @@ describe('<WaveformPlayer />', () => {
     wrapper.instance().toggleModal({ currentTarget: 'x', target: 'x' });
     expect(wrapper.state().showModal).toBe(true);
   });
-
+frames
 });
