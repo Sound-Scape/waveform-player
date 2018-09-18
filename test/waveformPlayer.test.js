@@ -25,7 +25,6 @@ describe('<WaveformPlayer />', () => {
 
   test('should show modal when showModal is set to true', () => {
     const wrapper = shallow(<Modules.WaveformPlayer />);
-    console.log(wrapper, wrapper.html());
     const children = wrapper.find('.waveform-player-wrapper').children().length;
     wrapper.setState({ showModal: true});
     const childrenWithModal = wrapper.find('.waveform-player-wrapper').children().length;

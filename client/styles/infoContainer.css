@@ -37,3 +37,7 @@
   padding-left: 7px;
   padding-right: 7px;
 }
+
+.wp-genre-hash:hover {
+  background: #666;
+}

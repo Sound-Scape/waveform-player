@@ -1,6 +1,6 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const combineLoaders = require("webpack-combine-loaders");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const combineLoaders = require('webpack-combine-loaders');
 
 module.exports = {
   entry: './client/index.jsx',
@@ -16,7 +16,7 @@ module.exports = {
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         query: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },

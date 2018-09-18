@@ -41,7 +41,7 @@ class Comment extends React.Component {
       position: 'absolute',
       left: timePosted,
       top: '0px',
-      height: '50px',
+      height: '45px',
       width: '400px',
       zIndez: 0,
     };

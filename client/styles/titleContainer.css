@@ -21,6 +21,10 @@
   z-index: 2;
 }
 
+.wp-artist:hover {
+  color: #fff;
+}
+
 .button-container {
   position: relative;
   width: 100%;
@@ -34,6 +38,10 @@
   height: 65px;
   width: 65px;
   background-color: #f50;
+}
+
+.wp-playbutton:hover {
+  background-color: #f63618;
 }
 
 .wp-play {

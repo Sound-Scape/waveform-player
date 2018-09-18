@@ -2,7 +2,7 @@
   position: absolute;
   height: 100px;
   width: 660px;
-  bottom: 30px;
+  bottom: 60px;
   left: 26px;
 }
 
@@ -10,7 +10,11 @@
   position: absolute;
   width: 657px;
   height: 30%;
-  bottom: 1px;
+  bottom: -31%;
+}
+
+.canvas-up {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 .wp-comment-streak {
