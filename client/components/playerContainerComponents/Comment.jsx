@@ -1,4 +1,5 @@
 const React = require('react');
+const styles = require('../../styles/playerContainer.css');
 
 class Comment extends React.Component {
   constructor(props) {
@@ -55,14 +56,14 @@ class Comment extends React.Component {
     };
 
     return (
-      <div className="wp-comment-wrapper" style={wrapperStyle}>
-         {this.state.visible && <div className="wp-comment-streak" />}
-        <div className="wp-comment-avatar" style={avatarStyle} onMouseEnter={this.showComment.bind(this)} onMouseLeave={this.hideComment.bind(this)}/>
+      <div className={styles["wp-comment-wrapper"]} style={wrapperStyle}>
+         {this.state.visible && <div className={styles["wp-comment-streak"]} />}
+        <div className={styles["wp-comment-avatar"]} style={avatarStyle} onMouseEnter={this.showComment.bind(this)} onMouseLeave={this.hideComment.bind(this)}/>
         {this.state.visible &&
           (
-            <div className="wp-comment">
-              <div className="wp-comment-user">{user}</div>
-              <div className="wp-comment-text">{text}</div>
+            <div className={styles["wp-comment"]}>
+              <div className={styles["wp-comment-user"]} >{user}</div>
+              <div className= {styles["wp-comment-text"]} >{text}</div>
             </div>
           )
          }

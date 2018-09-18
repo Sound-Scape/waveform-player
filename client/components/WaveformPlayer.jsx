@@ -5,6 +5,7 @@ const TitleContainer = require('./TitleContainer.jsx');
 const PlayerContainer = require('./PlayerContainer.jsx');
 const ArtContainer = require('./ArtContainer.jsx');
 const Modal = require('./Modal.jsx');
+const styles = require('../styles/WaveformPlayer.css');
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
@@ -19,11 +20,12 @@ class WaveformPlayer extends React.Component {
 
     this.playPause = this.playPause.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    console.log(styles);
   }
 
 
   componentDidMount() {
-    let songId = window.location.pathname.split('/')[2];
+    let songId = this.props.id || window.location.pathname.split('/')[2];
     if (parseInt(songId) > 100 || songId === undefined) {
       songId = 1;
     }
@@ -34,6 +36,10 @@ class WaveformPlayer extends React.Component {
           comments: data.allData.commentData,
         });
       });
+  }
+
+  test() {
+
   }
 
   toggleModal(e) {
@@ -65,8 +71,8 @@ class WaveformPlayer extends React.Component {
     };
 
     return (
-      <div className={showModal ? 'wp-greyout' : null}>
-        <div className="waveform-player-wrapper" style={style} onClick={this.playPause}>
+      <div className={showModal ? styles['wp-greyout'] : null}>
+        <div className={styles['waveform-player-wrapper']} style={style} onClick={this.playPause}>
           <InfoContainer song={song} />
           <TitleContainer song={song} isPlaying={isPlaying} playPause={this.playPause} />
           <PlayerContainer comments={comments} isPlaying={isPlaying} song={song} />
