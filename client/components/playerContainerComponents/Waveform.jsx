@@ -10,7 +10,7 @@ function generateRandomWaveformArray(size) {
     if ((i % 13) === 0) {
       factorIndex = Math.floor(Math.random() * factors.length);
     }
-    array.push(Math.floor((Math.random() * 20)) + factors[factorIndex]);
+    array.push(Math.floor((Math.random() * 29)) + factors[factorIndex]);
   }
   return array;
 }

@@ -38,10 +38,6 @@ class WaveformPlayer extends React.Component {
       });
   }
 
-  test() {
-
-  }
-
   toggleModal(e) {
     if (e.currentTarget === e.target) {
       this.setState({
