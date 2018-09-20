@@ -1,20 +1,30 @@
 .player-container {
   position: absolute;
   height: 100px;
-  width: 660px;
+  width: 750px;
   bottom: 60px;
   left: 26px;
 }
 
 .wp-comment-placeholder {
   position: absolute;
-  width: 657px;
+  width: 750px;
   height: 30%;
   bottom: -31%;
 }
 
 .canvas-up {
+  position: relative;
+  top: -13px;
+  width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
+  width: 100%;
+}
+
+.canvas-down { 
+  position: relative;
+  top: -16.5px;
+  width: 100%;
 }
 
 .wp-comment-streak {
