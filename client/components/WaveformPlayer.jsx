@@ -30,7 +30,7 @@ class WaveformPlayer extends React.Component {
     const parsed = queryString.parse(location.search);
     Number(parsed.id)
     if (Number(parsed.id) > 100 || parsed.id === undefined) {
-      songId = 1;
+      parsed.id = '1';
     }
     axios.get(`http://localhost:3003/api/${Number(parsed.id)}`)
       .then(({ data }) => {
