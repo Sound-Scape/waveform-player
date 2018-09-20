@@ -6,9 +6,10 @@ const PlayerContainer = require('./PlayerContainer.jsx');
 const ArtContainer = require('./ArtContainer.jsx');
 const Modal = require('./Modal.jsx');
 const styles = require('../styles/WaveformPlayer.css');
-const queryString = require('query-string');
 
-const parsed = queryString.parse(location.search);
+const proxyUrl = process.env.URL || `http://localhost:3000`;
+//May have to refactor this soon. 
+
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
@@ -27,14 +28,12 @@ class WaveformPlayer extends React.Component {
 
 
   componentDidMount() {
-    const parsed = queryString.parse(location.search);
-    Number(parsed.id)
-    if (Number(parsed.id) > 100 || parsed.id === undefined) {
-      parsed.id = '1';
-    }
-    console.log(window.location.href);
-    axios.get(`http://localhost:3003/api/${Number(parsed.id)}`)
+    const url = window.location.href.split('/');
+    const id = url[url.length - 2] || 1;
+    const proxyEndpoint = proxyUrl + '/api/3003/' + id;
+    axios.get(proxyEndpoint)
       .then(({ data }) => {
+        console.log(data);
         this.setState({
           song: data.allData.songData,
           comments: data.allData.commentData,
