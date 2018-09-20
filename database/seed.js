@@ -12,11 +12,15 @@ const waveformUrls = [
   'http://w1.sndcdn.com/fxguEjG4ax6B_m.png',
   'https://w1.sndcdn.com/cWHNerOLlkUq_m.png'];
 
-const DATABASE = 'soundcloud';
+const DATABASE = process.env.SEQ_DB || 'waveformplayer';
 
-const USER = 'root';
+const USER = process.env.SEQ_USER || 'root';
 
-const PASSWORD = null;
+const PASSWORD = process.env.SEQ_PW || '';
+
+const DB_URL = process.env.DATABASE_URL || 'localhost';
+
+console.log(DATABASE, USER, PASSWORD, DB_URL);
 
 const dbInit = new Sequelize('', USER, PASSWORD, {
   host: 'localhost',
@@ -63,12 +67,11 @@ function instantiateData(songModel, commentModel) {
 dbInit.query(`CREATE DATABASE IF NOT EXISTS ${DATABASE}`)
   .then(() => {
     console.log(`Database ${DATABASE} created`);
-
     const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
       host: 'localhost',
       dialect: 'mysql',
       logging: false,
-    });
+    })
 
     instantiateData(SongModel(sequelize), CommentModel(sequelize));
   });

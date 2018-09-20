@@ -6,6 +6,9 @@ const PlayerContainer = require('./PlayerContainer.jsx');
 const ArtContainer = require('./ArtContainer.jsx');
 const Modal = require('./Modal.jsx');
 const styles = require('../styles/WaveformPlayer.css');
+const queryString = require('query-string');
+
+const parsed = queryString.parse(location.search);
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
@@ -20,16 +23,16 @@ class WaveformPlayer extends React.Component {
 
     this.playPause = this.playPause.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
-    console.log(styles);
   }
 
 
   componentDidMount() {
-    let songId = this.props.id || window.location.pathname.split('/')[2];
-    if (parseInt(songId) > 100 || songId === undefined) {
+    const parsed = queryString.parse(location.search);
+    Number(parsed.id)
+    if (Number(parsed.id) > 100 || parsed.id === undefined) {
       songId = 1;
     }
-    axios.get(`http://localhost:3003/api/${songId}`)
+    axios.get(`http://localhost:3003/api/${Number(parsed.id)}`)
       .then(({ data }) => {
         this.setState({
           song: data.allData.songData,

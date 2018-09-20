@@ -2,7 +2,7 @@ const React = require('react');
 const styles = require('../../styles/playerContainer.css');
 
 function generateRandomWaveformArray(size) {
-  const factors = [30, 40, 50, 55, 60, 70, 90];
+  const factors = [30, 40, 50, 55, 60, 71];
   let factorIndex = 0;
   let array = [];
 

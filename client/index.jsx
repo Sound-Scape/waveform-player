@@ -6,4 +6,4 @@ const WaveformPlayer = require('./components/WaveformPlayer.jsx');
 //   <WaveformPlayer />
 // );
 
-ReactDOM.render(<WaveformPlayer />, document.getElementById('app'));
+ReactDOM.render(<WaveformPlayer />, document.getElementById('waveform-player'));

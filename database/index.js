@@ -4,7 +4,7 @@ const SongModel = require('./models/Songs.js');
 
 const CommentModel = require('./models/Comments.js');
 
-const DATABASE = 'soundcloud';
+const DATABASE = 'waveformplayer';
 
 const USER = 'root';
 
@@ -15,12 +15,10 @@ const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
   dialect: 'mysql',
   logging: false,
 });
-
 const getSongData = function (id, callback) {
   const songModel = SongModel(sequelize);
   const commentModel = CommentModel(sequelize);
   const queryResult = {};
-
   songModel.findAll({
     where: { id },
   })

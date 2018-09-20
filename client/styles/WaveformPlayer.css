@@ -1,8 +1,8 @@
 .waveform-player-wrapper {
-  position: absolute;
+  position: relative;
   height: 380px;
-  width: 1080px;
-  background-image: linear-gradient(135deg, white, green);
+  width: 1200px;
+  background-image: linear-gradient(135deg, white, red);
 }
 
 .wp-greyout {
@@ -10,4 +10,3 @@
   width: 100%;
   filter: grayscale(90%);
 }
-
