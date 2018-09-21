@@ -9,7 +9,7 @@ app.use(cors());
 app.use('/', express.static('public'));
 app.use('/song/:id', express.static('public'));
 
-app.get('/api/song/:id', (req, res) => {
+app.get('/api/songs/:id', (req, res) => {
   db.getSongData(req.params.id, res.send.bind(res));
 });
 

@@ -30,7 +30,7 @@ class WaveformPlayer extends React.Component {
   componentDidMount() {
     const url = window.location.href.split('/');
     const id = url[url.length - 2] || 1;
-    const proxyEndpoint = proxyUrl + '/api/3003/' + id;
+    const proxyEndpoint = proxyUrl + '/api/waveformplayer/' + id;
     axios.get(proxyEndpoint)
       .then(({ data }) => {
         console.log(data);
