@@ -6,7 +6,7 @@ WORKDIR /src/app
 
 COPY . /src/app
 
-RUN npm install && yum install -y git
+RUN npm install
 
 EXPOSE 3003
 
