@@ -6,7 +6,7 @@ WORKDIR /src/app
 
 COPY . /src/app
 
-RUN npm install
+RUN npm install && apk update && apk upgrade && apk add --no-cache bash git openssh
 
 EXPOSE 3003
 
