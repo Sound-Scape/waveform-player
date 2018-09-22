@@ -1,4 +1,4 @@
-FROM node:7.4-with-git-alpine 
+FROM node:7.6-alpine
 
 RUN mkdir -p /src/app
 
