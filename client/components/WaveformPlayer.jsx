@@ -7,9 +7,7 @@ const ArtContainer = require('./ArtContainer.jsx');
 const Modal = require('./Modal.jsx');
 const styles = require('../styles/WaveformPlayer.css');
 
-const proxyUrl = process.env.URL || `http://localhost:8081`;
-//May have to refactor this soon. 
-
+const proxyUrl = process.env.URL || `http://localhost:8080`;
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
