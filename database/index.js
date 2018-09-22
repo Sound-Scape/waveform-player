@@ -4,18 +4,21 @@ const SongModel = require('./models/Songs.js');
 
 const CommentModel = require('./models/Comments.js');
 
-const DATABASE = 'waveformplayer';
+const DATABASE = process.env.SEQ_DB || 'waveformplayer';
 
-const USER = 'root';
+const USER = process.env.SEQ_USER || 'root';
 
-const PASSWORD = '';
+const PASSWORD = process.env.SEQ_PW || '';
+
+const DB_HOST = process.env.DB_HOST || 'localhost';
 
 const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
-  host: 'localhost',
+  host: DB_HOST,
   dialect: 'mysql',
   logging: false,
 });
 const getSongData = function (id, callback) {
+  // console.log(DB_HOST)
   const songModel = SongModel(sequelize);
   const commentModel = CommentModel(sequelize);
   const queryResult = {};

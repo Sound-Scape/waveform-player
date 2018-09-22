@@ -10,4 +10,4 @@ RUN npm install
 
 EXPOSE 3003
 
-CMD ["npm", "start" ]
+CMD ["npm", "run", "docker-build"]
