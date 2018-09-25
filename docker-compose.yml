@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7.23
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: soundclout
+
+  waveform_player:
+    build: .
+    depends_on:
+      - 'db'
+    environment: 
+      SEQ_DB: soundcloud
+      SEQ_USER: root
+      SEQ_PW: soundclout
+      DB_HOST: db
+
+    ports: 
+      - '80:3003'

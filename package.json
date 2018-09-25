@@ -11,7 +11,8 @@
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js",
     "test": "jest --verbose",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "docker-build": "node database/seed.js && nodemon server/index.js"
   },
   "jest": {
     "transform": {
@@ -71,6 +72,7 @@
     "jest": "^23.5.0",
     "jest-css-modules": "^1.1.0",
     "mini-css-extract-plugin": "^0.4.2",
+    "morgan": "^1.9.1",
     "mysql2": "^1.6.1",
     "query-string": "^6.1.0",
     "regenerator-runtime": "^0.12.1",
