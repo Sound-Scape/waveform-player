@@ -17,7 +17,7 @@ const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
   dialect: 'mysql',
   logging: false,
 });
-const getSongData = function (id, callback) {
+function getSongData(id, callback) {
   // console.log(DB_HOST)
   const songModel = SongModel(sequelize);
   const commentModel = CommentModel(sequelize);

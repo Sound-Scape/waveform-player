@@ -7,7 +7,7 @@ const ArtContainer = require('./ArtContainer.jsx');
 const Modal = require('./Modal.jsx');
 const styles = require('../styles/WaveformPlayer.css');
 
-const proxyUrl = process.env.URL || `http://localhost:80`;
+const proxyUrl = process.env.URL || '18.224.8.56';
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
@@ -29,8 +29,8 @@ class WaveformPlayer extends React.Component {
     console.log('HELLO', process.env.URL, process.env.SEQ_DB);
     const url = window.location.href.split('/');
     const id = url[url.length - 2] || 1;
-    const proxyEndpoint = proxyUrl + '/api/waveformplayer/' + id;
-    axios.get(proxyEndpoint)
+    // const proxyEndpoint = proxyUrl + '/api/waveformplayer/' + id;
+    axios.get('/api/waveformplayer/' + id)
       .then(({ data }) => {
         console.log(data);
         this.setState({

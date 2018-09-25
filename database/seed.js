@@ -66,7 +66,6 @@ function instantiateData(songModel, commentModel, connection) {
     })
     .then(() => {
       console.log(`Database ${DATABASE} seeded`);
-      // connection.close();
       setTimeout(() => {
         connection.close();
       }, 6000);
