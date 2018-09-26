@@ -3,18 +3,19 @@
 > Project description
 
 This project is SoundCloud mock, a front-end capstone project for Hack Reactor. This module
-represents the top component of an individual songs' page, with the waveform, dynamically rendered 
-comments, and song characteristics. 
+represents the top component of an individual songs' page, with the waveform, dynamically rendered
+comments, and song characteristics.
 
 Here is another readme edit for the readme branch.
 
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/SoundScape/proxy-avincenthill
+
+  - https://github.com/SoundScape/component-jverch-comments
+  - https://github.com/SoundScape/component-brandon-socialArea
+  - https://github.com/SoundScape/component-rebecca-relatedLists
 
 ## Table of Contents
 
