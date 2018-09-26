@@ -10,10 +10,10 @@ const TitleContainer = (props) => {
 
   return (
     <div className={styles['title-container']}>
-      <Playbutton isPlaying={isPlaying} playPause={playPause}/>
+      <Playbutton isPlaying={isPlaying} playPause={playPause} />
       <Title title={title} />
       <Artist artist={artist} />
-   </div>
+    </div>
   );
 };
 

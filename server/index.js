@@ -11,11 +11,10 @@ app.use(morgan('dev'));
 app.use('/', express.static('public'));
 app.use('/songs/:id', express.static('public'));
 
-//Remember to turn this one back???
 app.get('/api/waveformplayer/:id', (req, res) => {
   db.getSongData(req.params.id, res.send.bind(res));
 });
 
 app.listen(3003, () => console.log(`
-  Now listening at port 3003
+  avincenthill component-server listening at port 3003...
 `));

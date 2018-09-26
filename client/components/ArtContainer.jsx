@@ -23,7 +23,7 @@ class ArtContainer extends React.Component {
       backgroundSize: '100% 100%',
     };
     return (
-      <div className={`${styles['art-container']} cursor`} style={style} onClick={this.handleClick.bind(this)}/>
+      <div className={`${styles['art-container']} cursor`} style={style} onClick={this.handleClick.bind(this)} />
     );
   }
 }

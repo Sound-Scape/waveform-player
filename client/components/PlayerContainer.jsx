@@ -6,7 +6,6 @@ const styles = require('../styles/playerContainer.css');
 class PlayerContainer extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {};
   }
 

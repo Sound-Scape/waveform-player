@@ -11,11 +11,19 @@ Here is another readme edit for the readme branch.
 
 ## Related Projects
 
+  Proxy server:
   - https://github.com/SoundScape/proxy-avincenthill
 
+  Component services:
   - https://github.com/SoundScape/component-jverch-comments
   - https://github.com/SoundScape/component-brandon-socialArea
   - https://github.com/SoundScape/component-rebecca-relatedLists
+
+## API Documentation
+
+This component server has a standard CRUD API described below:
+
+
 
 ## Table of Contents
 
