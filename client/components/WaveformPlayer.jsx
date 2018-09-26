@@ -7,7 +7,7 @@ const ArtContainer = require('./ArtContainer.jsx');
 const Modal = require('./Modal.jsx');
 const styles = require('../styles/WaveformPlayer.css');
 
-const proxyUrl = process.env.URL || '18.224.8.56';
+// const proxyUrl = process.env.URL || '18.224.8.56';
 
 class WaveformPlayer extends React.Component {
   constructor(props) {
@@ -17,7 +17,6 @@ class WaveformPlayer extends React.Component {
       comments: [],
       isPlaying: false,
       showModal: false,
-
     };
 
     this.playPause = this.playPause.bind(this);
@@ -26,17 +25,23 @@ class WaveformPlayer extends React.Component {
 
 
   componentDidMount() {
+    console.log('WaveformPlayer mounted');
     // console.log('HELLO', process.env.URL, process.env.SEQ_DB); // TBD process vars undefined
     const url = window.location.href.split('/');
     const id = url[url.length - 2] || 1;
     // const proxyEndpoint = proxyUrl + '/api/waveformplayer/' + id; // TBD what is this
-    axios.get('/api/waveformplayer/' + id)
+    const endpoint = `/api/waveformplayer/${id}`;
+    // const endpoint = `/api/waveformplayer/2`;
+    axios.get(endpoint)
       .then(({ data }) => {
-        console.log('avincenthill client GET request to /api/waveformplayer/ on component server returned ', data);
+        console.log(`avincenthill client GET request to ${endpoint} on component server returned `, data);
         this.setState({
           song: data.allData.songData,
           comments: data.allData.commentData,
         });
+      })
+      .catch((error) => {
+        console.error('axios.get error: ', error);
       });
   }
 
