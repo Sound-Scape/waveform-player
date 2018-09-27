@@ -10,12 +10,11 @@ const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
   dialect: 'mysql',
   logging: false,
 });
+const songModel = SongModel(sequelize);
+const commentModel = CommentModel(sequelize);
 
 module.exports = {
   getSongData: (id, callback) => {
-    // console.log(DB_HOST)
-    const songModel = SongModel(sequelize);
-    const commentModel = CommentModel(sequelize);
     const queryResult = {};
     songModel.findAll({
       where: { id },
@@ -32,13 +31,139 @@ module.exports = {
         queryResult.commentData = result;
         callback(JSON.stringify({ allData: queryResult }));
       }))
-  }
-
+  },
 
   // REST operations
-  getSong: () => {
-    console.log('hi');
-  }
+  // **************************************
+  // songs
+  getSongs: (err, cb) => {
+    const queryResult = {};
+    songModel.findAll()
+      .then((result => {
+        queryResult.data = result;
+        cb(null, JSON.stringify(queryResult));
+      }));
+  },
+
+  getSong: (err, cb, id) => {
+    const queryResult = {};
+    songModel.findAll({
+      where: { id },
+    })
+      .then((result => {
+        queryResult.data = result;
+        cb(null, JSON.stringify(queryResult));
+      }));
+  },
+
+  updateSong: (err, cb, id, body) => {
+    // destructure update properties
+    const {
+      title,
+      coverArt,
+      artist,
+      date,
+      duration,
+      genre,
+      waveform,
+      backgroundCOlor,
+    } = body;
+    songModel.update(
+      {
+        title,
+        coverArt,
+        artist,
+        date,
+        duration,
+        genre,
+        waveform,
+        backgroundCOlor
+      },
+      {
+        returning: true,
+        where: { id },
+      }
+    ).then((result => {
+      cb(null);
+    }));
+  },
+
+  deleteSong: (err, cb, id) => {
+    const queryResult = {};
+    songModel.destroy({
+      where: { id },
+    })
+      .then((result => {
+        console.log(result);
+        cb(null);
+      }));
+  },
+
+  createSong: (err, cb, body) => {
+    const {
+      id,
+      title,
+      coverArt,
+      artist,
+      date,
+      duration,
+      genre,
+      waveform,
+      backgroundCOlor,
+    } = body;
+    songModel.create(
+      {
+        id,
+        title,
+        coverArt,
+        artist,
+        date,
+        duration,
+        genre,
+        waveform,
+        backgroundCOlor,
+      }
+    ).then((result => {
+      cb(null);
+    })).catch((err) => {
+      cb(err);
+    });
+  },
+
+  // **************************************
+  // comments
+  getComments: (err, cb) => {
+    const queryResult = {};
+    commentModel.findAll()
+      .then((result => {
+        queryResult.data = result;
+        cb(null, JSON.stringify(queryResult));
+      }));
+  },
+
+  getComment: (err, cb, id) => {
+    const queryResult = {};
+    commentModel.findAll({
+      where: { id },
+    })
+      .then((result => {
+        queryResult.data = result;
+        cb(null, JSON.stringify(queryResult));
+      }));
+  },
+
+
+  updateComment: (err, cb) => {
+    cb();
+  },
+
+  deleteComment: (err, cb) => {
+    cb();
+  },
+
+  createComment: (err, cb) => {
+    cb();
+  },
 };
 
 
