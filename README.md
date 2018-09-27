@@ -25,11 +25,15 @@ This component server has a standard CRUD API described below:
 
 #### DATA SHAPE
 
-DB: waveformplayer
+DB:
+
+waveformplayer
 
 Tables:
 
+```
 songs
+
   +-----------------+--------------+------+-----+---------+----------------+
 | Field           | Type         | Null | Key | Default | Extra          |
 +-----------------+--------------+------+-----+---------+----------------+
@@ -45,6 +49,7 @@ songs
 +-----------------+--------------+------+-----+---------+----------------+
 
 comments
+
 +------------+--------------+------+-----+---------+----------------+
 | Field      | Type         | Null | Key | Default | Extra          |
 +------------+--------------+------+-----+---------+----------------+
@@ -55,15 +60,17 @@ comments
 | timePosted | float        | YES  |     | NULL    |                |
 | songId     | int(11)      | YES  |     | NULL    |                |
 +------------+--------------+------+-----+---------+----------------+
+```
 
 ### API ROUTING
 
 #### SONGS
-  #####GET /api/songs/
+  ####GET /api/songs/
 
   - On success, the HTTP status code in the response header is 200 OK and the response body contains an object, whose key "data" points to an array of objects, with each object representing a song.
 
-  ######example data
+  ####example data
+  ```
   {
     "data": [
         {
@@ -88,9 +95,31 @@ comments
             "waveform": "https://w1.sndcdn.com/cWHNerOLlkUq_m.png",
             "backgroundColor": "#106b18"
         },
+
       ...
 
+      ```
 
+  ####GET /api/songs/:id
+  get a song's data
+  ####PUT /api/songs/:id
+  update a song
+  ####DELETE /api/songs/:id
+  delete a song
+  ####POST /api/songs/:id
+  create a song
+
+#### COMMENTS
+  ####GET /api/comments/
+  get all comment data
+  ####GET /api/comments/:id
+  get a comment's data
+  ####PUT /api/comments/:id
+  update a comments
+  ####DELETE /api/comments/:id
+  delete a comments
+  ####POST /api/comments/:id
+  create a comments
 
 
 ## Table of Contents
