@@ -62,15 +62,15 @@ comments
 +------------+--------------+------+-----+---------+----------------+
 ```
 
-### API ROUTING
+## API ROUTING
 
-#### SONGS
+### SONGS
   ####GET /api/songs/
 
   - On success, the HTTP status code in the response header is 200 OK and the response body contains an object, whose key "data" points to an array of objects, with each object representing a song.
 
   ####example data
-  ```{
+  {
     "data": [
         {
             "id": 1,
@@ -93,7 +93,7 @@ comments
             "genre": "content-based",
             "waveform": "https://w1.sndcdn.com/cWHNerOLlkUq_m.png",
             "backgroundColor": "#106b18"
-        }, ...```
+        }, ...
 
 
   ####GET /api/songs/:id
@@ -105,7 +105,7 @@ comments
   ####POST /api/songs/:id
   create a song
 
-#### COMMENTS
+### COMMENTS
   ####GET /api/comments/
   get all comment data
   ####GET /api/comments/:id
