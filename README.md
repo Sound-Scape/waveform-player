@@ -70,8 +70,7 @@ comments
   - On success, the HTTP status code in the response header is 200 OK and the response body contains an object, whose key "data" points to an array of objects, with each object representing a song.
 
   ####example data
-  ```
-  {
+  ```{
     "data": [
         {
             "id": 1,
@@ -94,9 +93,7 @@ comments
             "genre": "content-based",
             "waveform": "https://w1.sndcdn.com/cWHNerOLlkUq_m.png",
             "backgroundColor": "#106b18"
-        },
-
-      ...```
+        }, ...```
 
 
   ####GET /api/songs/:id
