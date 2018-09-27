@@ -152,17 +152,66 @@ module.exports = {
       }));
   },
 
-
-  updateComment: (err, cb) => {
-    cb();
+  updateComment: (err, cb, id, body) => {
+    // destructure update properties
+    const {
+      text,
+      user,
+      userImage,
+      timePosted,
+      songId,
+    } = body;
+    commentModel.update(
+      {
+        text,
+        user,
+        userImage,
+        timePosted,
+        songId,
+      },
+      {
+        returning: true,
+        where: { id },
+      }
+    ).then((result => {
+      cb(null);
+    }));
   },
 
-  deleteComment: (err, cb) => {
-    cb();
+  deleteComment: (err, cb, id) => {
+    const queryResult = {};
+    commentModel.destroy({
+      where: { id },
+    })
+      .then((result => {
+        console.log(result);
+        cb(null);
+      }));
   },
 
-  createComment: (err, cb) => {
-    cb();
+  createComment: (err, cb, body) => {
+    const {
+      id,
+      text,
+      user,
+      userImage,
+      timePosted,
+      songId,
+    } = body;
+    commentModel.create(
+      {
+        id,
+        text,
+        user,
+        userImage,
+        timePosted,
+        songId,
+      }
+    ).then((result => {
+      cb(null);
+    })).catch((err) => {
+      cb(err);
+    });
   },
 };
 

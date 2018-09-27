@@ -71,17 +71,26 @@ app.get('/api/comments/:id', (req, res) => {
   }, req.params.id);
 });
 
-
 app.put('/api/comments/:id', (req, res) => {
-  res.status(200).send(`received PUT to /api/comments/${req.params.id}`);
+  db.updateComment(null, (err) => {
+    res.status(202).send(`comment with id=${req.params.id} updated`);
+  }, req.params.id, req.body);
 });
 
 app.delete('/api/comments/:id', (req, res) => {
-  res.status(200).send(`received DELETE to /api/comments/${req.params.id}`);
+  db.deleteComment(null, (err) => {
+    res.status(202).send(`comment with id=${req.params.id} deleted`);
+  }, req.params.id);
 });
 
 app.post('/api/comments/:id', (req, res) => {
-  res.status(200).send(`received POST to /api/comments/${req.params.id}`);
+  db.createComment(null, (err) => {
+    if (err) {
+      res.status(409).send(`comment with id=${req.params.id} already exists`);
+    } else {
+      res.status(201).send(`comment with id=${req.params.id} created`);
+    }
+  }, req.body);
 });
 
 const componentServerPort = 1337;
