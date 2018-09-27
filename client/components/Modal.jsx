@@ -17,10 +17,10 @@ class Modal extends React.Component {
           <div className={styles["wp-modal-header"]}>
             {title}
           </div>
-          <img src={coverArt} alt="Album Art" height="500" width="500" className={styles["img-modal"]} align="middle"/>
+          <img src={coverArt} alt="Album Art" height="500" width="500" className={styles["img-modal"]} align="middle" />
         </div>
       </div>),
-    modal);    
+      modal);
   }
 }
 

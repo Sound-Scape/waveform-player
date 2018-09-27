@@ -8,8 +8,8 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "build": "webpack -d --watch",
-    "start": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch",
+    "start-dev": "nodemon server/index.js",
     "test": "jest --verbose",
     "seed": "node database/seed.js",
     "docker-build": "node database/seed.js && nodemon server/index.js"
@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.0.0",
     "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
+    "body-parser": "^1.18.3",
     "css-loader": "^1.0.0",
     "express": "^4.16.3",
     "faker": "^4.1.0",

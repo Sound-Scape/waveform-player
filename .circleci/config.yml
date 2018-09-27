@@ -1,8 +1,8 @@
 version: 2
-jobs: 
+jobs:
   build:
     working_directory: ~/tmp
-    docker: 
+    docker:
       - image: circleci/node:7
     steps:
       - checkout
