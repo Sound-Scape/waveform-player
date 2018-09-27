@@ -20,7 +20,6 @@ class ArtContainer extends React.Component {
   render() {
     const { props } = this;
     const style = {
-      // backgroundImage: `url(${this.props.song.coverArt})`,
       backgroundSize: '100% 100%',
     };
     if (props.song.coverArt) {
