@@ -9,10 +9,10 @@ const Playbutton = (props) => {
         {!isPlaying && <div className={styles["wp-play"]} onClick={playPause} />}
         {isPlaying &&
           (
-          <div>
-            <div className={styles["wp-pause1"]} onClick={playPause} />
-            <div className={styles["wp-pause2"]} onClick={playPause} />
-          </div>
+            <div>
+              <div className={styles["wp-pause1"]} onClick={playPause} />
+              <div className={styles["wp-pause2"]} onClick={playPause} />
+            </div>
           )
         }
       </div>

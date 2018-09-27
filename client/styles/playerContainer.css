@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.canvas-down { 
+.canvas-down {
   position: relative;
   top: -16.5px;
   width: 100%;
@@ -42,7 +42,7 @@
 
 .wp-comment {
   position: absolute;
-  bottom: -5px; 
+  bottom: -5px;
   /*This is the one I want to engage with...*/
   left: 9px;
   animation-name: comment-drop;
