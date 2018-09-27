@@ -56,36 +56,41 @@ comments
 | songId     | int(11)      | YES  |     | NULL    |                |
 +------------+--------------+------+-----+---------+----------------+
 
-#### ROUTING
+### API ROUTING
 
-##### GET SOCIAL AREA DATA FOR ALL TRACKS
-  // TBD fix this
-  Endpoint
-  GET .../api/stats/
+#### SONGS
+  #####GET /api/songs/
 
-  - On success, the HTTP status code in the response header is 200 OK and the response body contains an array of objects, with each object representing a song.
+  - On success, the HTTP status code in the response header is 200 OK and the response body contains an object, whose key "data" points to an array of objects, with each object representing a song.
 
-  - Each song object has an id, plays, likes and reposts.
+  ######example data
+  {
+    "data": [
+        {
+            "id": 1,
+            "title": "Brandupdated",
+            "coverArt": "https://source.unsplash.com/OSKZMbtsLFU/690x900",
+            "artist": "Kailyn Lindgren II",
+            "date": "2018-09-26T09:19:08.000Z",
+            "duration": 4.24,
+            "genre": "payment",
+            "waveform": "https://w1.sndcdn.com/cWHNerOLlkUq_m.png",
+            "backgroundColor": "#3a2e55"
+        },
+        {
+            "id": 3,
+            "title": "knowledge base",
+            "coverArt": "https://source.unsplash.com/c0ZvWlXRPLk/690x900",
+            "artist": "Herminia Kuhic",
+            "date": "2018-09-26T11:05:34.000Z",
+            "duration": 0,
+            "genre": "content-based",
+            "waveform": "https://w1.sndcdn.com/cWHNerOLlkUq_m.png",
+            "backgroundColor": "#106b18"
+        },
+      ...
 
-  Example Data
-  [
-    {
-        "_id": "5baabe947707de1ea0f10019",
-        "id": 3,
-        "plays": 7729,
-        "likes": 80,
-        "reposts": 309,
-        "__v": 0
-    },
-    {
-        "_id": "5baabe947707de1ea0f1001a",
-        "id": 4,
-        "plays": 3957,
-        "likes": 845,
-        "reposts": 316,
-        "__v": 0
-    }
-  ]
+
 
 
 ## Table of Contents
