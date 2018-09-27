@@ -65,11 +65,11 @@ comments
 ## API ROUTING
 
 ### SONGS
-  ####GET /api/songs/
+  #### GET /api/songs/
 
   - On success, the HTTP status code in the response header is 200 OK and the response body contains an object, whose key "data" points to an array of objects, with each object representing a song.
 
-  ####example data
+  #### example data
   {
     "data": [
         {
@@ -96,25 +96,25 @@ comments
         }, ...
 
 
-  ####GET /api/songs/:id
+  #### GET /api/songs/:id
   get a song's data
-  ####PUT /api/songs/:id
+  #### PUT /api/songs/:id
   update a song
-  ####DELETE /api/songs/:id
+  #### DELETE /api/songs/:id
   delete a song
-  ####POST /api/songs/:id
+  #### POST /api/songs/:id
   create a song
 
 ### COMMENTS
-  ####GET /api/comments/
+  #### GET /api/comments/
   get all comment data
-  ####GET /api/comments/:id
+  #### GET /api/comments/:id
   get a comment's data
-  ####PUT /api/comments/:id
+  #### PUT /api/comments/:id
   update a comments
-  ####DELETE /api/comments/:id
+  #### DELETE /api/comments/:id
   delete a comments
-  ####POST /api/comments/:id
+  #### POST /api/comments/:id
   create a comments
 
 
