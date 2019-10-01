@@ -18,12 +18,15 @@ class ArtContainer extends React.Component {
   }
 
   render() {
+    const { props } = this;
     const style = {
-      backgroundImage: `url(${this.props.song.coverArt})`,
       backgroundSize: '100% 100%',
     };
+    if (props.song.coverArt) {
+      style.backgroundImage = `url(${props.song.coverArt})`;
+    }
     return (
-      <div className={`${styles['art-container']} cursor`} style={style} onClick={this.handleClick.bind(this)}/>
+      <div className={`${styles['art-container']} cursor`} style={style} onClick={this.handleClick.bind(this)} />
     );
   }
 }
